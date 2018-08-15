@@ -10,7 +10,6 @@ jobs:
     - stage: "Docker 1"
     - name:  "Docker compose up"
     - script: docker-compose up
-  include:
     - stage: "Docker 2"
     - name:  "Docker list processes"
     - script: docker ps -a
