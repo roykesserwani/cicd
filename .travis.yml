@@ -1,11 +1,11 @@
 sudo: required
 
+language: bash
 
 services:
   - docker
 
 jobs:
-  language: bash
   include:
     - stage: "Docker 1"
     - name:  "Docker compose up"
