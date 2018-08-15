@@ -1,0 +1,14 @@
+sudo: required
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: "Docker"
+    - name:  "Docker compose up"
+    - script: docker-compose up
+  include:
+    - stage: "Docker"
+    - name:  "Docker list processes"
+    - script: docker ps -a

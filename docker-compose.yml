@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    container_name: nginx
+    build: .docker/nginx
+    ports:
+        - "82:80"
+    volumes:
+        -  .:${APP_DIRECTORY}
+  php:
+    container_name: php
+    build: .docker/php
+    volumes:
+        - .:${APP_DIRECTORY}
+    environment:
+        APP_ENV: ${APP_ENV}
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - 6379:6379
