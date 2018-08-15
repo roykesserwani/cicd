@@ -1,6 +1,5 @@
 sudo: required
 
-language: bash
 
 services:
   - docker
@@ -8,8 +7,13 @@ services:
 jobs:
   include:
     - stage: "Docker 1"
+    - language: bash
     - name:  "Docker compose up"
     - script: docker-compose up
+
+
+
     - stage: "Docker 2"
+    - language: bash
     - name:  "Docker list processes"
     - script: docker ps -a
