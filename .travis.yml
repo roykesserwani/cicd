@@ -6,9 +6,9 @@ services:
   - docker
 
 before_script:
-- if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=APP_ENV_PRODUCTION; fi
-- if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=APP_ENV_STAGING; fi
-- echo APP_ENV
+- if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=$APP_ENV_PRODUCTION; fi
+- if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=$APP_ENV_STAGING; fi
+- echo "$APP_ENV"
 
 jobs:
   include:
