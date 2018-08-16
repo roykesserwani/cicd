@@ -1,6 +1,6 @@
 FROM php:7.2-fpm
 MAINTAINER Roy Kesserwani <roy@infonyze.com>
-WORKDIR /var/www/html/infonyze
+WORKDIR /var/www/html
 
 
 RUN apt-get update && apt-get install -y zlib1g-dev libpng-dev libpcre3-dev
