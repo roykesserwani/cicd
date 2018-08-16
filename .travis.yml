@@ -1,15 +1,19 @@
-sudo: required
+sudo: true
 
 language: bash
 
 services:
   - docker
 
+before_script:
+- if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=APP_ENV_PRODUCTION; fi
+- if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=APP_ENV_STAGING; fi
+
+
 jobs:
   include:
     - stage: "Docker 1"
     - name:  "Docker compose up"
-    - script: sudo docker-compose up
 
 
 
