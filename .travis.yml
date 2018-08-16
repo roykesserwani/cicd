@@ -12,11 +12,8 @@ before_script:
 jobs:
   include:
 
-    - stage: "Docker: build and run containers"
-    - script: docker-compose up -d
-
-    - stage: "Docker: list processes"
-    - script: docker ps -a
-
-    - stage: "Run tests"
-    - script: docker-compose exec cicd_php vendor/phpunit/phpunit/phpunit
+    - stage: "Docker: Running Tests"
+      script:
+      - docker-compose up -d
+      - docker ps -a
+      - docker-compose exec cicd_php vendor/phpunit/phpunit/phpunit
