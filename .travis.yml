@@ -8,15 +8,10 @@ services:
 before_script:
 - if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=$APP_ENV_PRODUCTION; fi
 - if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=$APP_ENV_STAGING; fi
-- echo "$APP_ENV"
 
 jobs:
   include:
-    - stage: "Docker 1"
-    - name:  "Docker compose up"
-    - script: docker-compose up
-
-
-    - stage: "Docker 2"
-    - name:  "Docker list processes"
-    - script: docker ps -a
+    - stage: "Docker: build and run containers"
+    - script: docker-compose up -d
+    - stage: "Run tests"
+    - script: docker-compose exec php vendor/phpunit/phpunit/phpunit
