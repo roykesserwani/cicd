@@ -14,5 +14,4 @@ jobs:
     - stage: "Docker: Running Tests"
       script:
       - docker-compose up -d
-      - docker-compose exec php bash
-      - vendor/bin/phpunit
+      - docker-compose exec php ./vendor/bin/phpunit
