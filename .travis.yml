@@ -14,6 +14,7 @@ jobs:
   include:
     - stage: "Docker 1"
     - name:  "Docker compose up"
+    - script: docker-compose up
 
 
 
