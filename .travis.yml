@@ -15,5 +15,8 @@ jobs:
     - stage: "Docker: build and run containers"
     - script: docker-compose up -d
 
+    - stage: "Docker: list processes"
+    - script: docker ps -a
+
     - stage: "Run tests"
     - script: docker-compose exec cicd_php vendor/phpunit/phpunit/phpunit
