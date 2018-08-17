@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - echo "Testing docker hub credentials"
+  - echo "Testing docker hub credential"
   - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
 
 before_script:
