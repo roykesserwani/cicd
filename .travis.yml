@@ -8,7 +8,6 @@ services:
 before_install:
   - echo "Testing docker hub credentials"
   - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-  - echo "Docker hub credentials are working"
 
 before_script:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=$APP_ENV_PRODUCTION; fi
