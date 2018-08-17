@@ -3,6 +3,7 @@ services:
   web:
     container_name: nginx
     build: .docker/nginx
+    image: nginx
     ports:
         - "82:80"
     volumes:
@@ -10,6 +11,7 @@ services:
   php:
     container_name: php
     build: .docker/php
+    image: php
     volumes:
         - .:${APP_DIRECTORY}
     environment:
