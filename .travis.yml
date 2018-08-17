@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "Testing docker hub credentials"
-  - docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+  - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
   - echo "Docker hub credentials are working"
 
 before_script:
