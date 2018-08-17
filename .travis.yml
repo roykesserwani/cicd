@@ -5,9 +5,10 @@ language: bash
 services:
   - docker
 
-before_script:
+before_install:
   - echo "Testing docker hub credential"
-  - docker login -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+
+before_script:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=$APP_ENV_PRODUCTION; fi
   - if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=$APP_ENV_STAGING; fi
 
