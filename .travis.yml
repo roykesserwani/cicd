@@ -1,6 +1,6 @@
 sudo: true
 
-language: bash
+language: bash, php
 
 services:
   - docker
