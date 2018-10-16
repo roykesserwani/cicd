@@ -5,10 +5,8 @@ services:
     build: .docker/nginx
     image: nginx
     environment:
-      VIRTUAL_HOST: cicd.local
+      VIRTUAL_HOST: hello.wtf
       VIRTUAL_PORT: 80
-    expose:
-      - 80
     volumes:
         -  .:${APP_DIRECTORY}
   php:
