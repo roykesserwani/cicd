@@ -1,5 +1,8 @@
 sudo: true
 
+env:
+  - TAG=$TRAVIS_COMMIT
+
 language: php
 
 services:
@@ -10,7 +13,7 @@ before_install:
 
 before_script:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then export APP_ENV=$APP_ENV_PRODUCTION; fi
-  - if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=$APP_ENV_STAGING; then export TAG=$TRAVIS_COMMIT  fi
+  - if [[ $TRAVIS_BRANCH =~ (^release) ]]; then export APP_ENV=$APP_ENV_STAGING;  fi
 
 jobs:
   include:
