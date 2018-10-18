@@ -12,7 +12,7 @@ services:
   php:
     container_name: php
     build: .docker/php
-    image: php
+    image: roykesserwani/cicd:${TAG}
     volumes:
         - .:${APP_DIRECTORY}
     environment:
